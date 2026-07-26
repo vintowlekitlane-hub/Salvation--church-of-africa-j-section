@@ -69,3 +69,22 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 60000);
+// Hero Slideshow
+
+const slides = document.querySelectorAll(".slide");
+
+let currentSlide = 0;
+
+function showSlide() {
+
+slides[currentSlide].classList.remove("active");
+
+currentSlide = (currentSlide + 1) % slides.length;
+
+slides[currentSlide].classList.add("active");
+
+}
+
+if (slides.length > 0) {
+    setInterval(showSlide, 5000);
+}
