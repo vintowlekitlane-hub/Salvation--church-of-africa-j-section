@@ -1,34 +1,48 @@
+/* Salvation Church of Africa - Version 2 */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
     scroll-behavior:smooth;
 }
 
 body{
-    background:linear-gradient(135deg,#002b5c,#005fa3,#ffffff);
-    color:white;
-    overflow-x:hidden;
+    background:#f5f7fb;
+    color:#222;
+    line-height:1.6;
 }
+
+/* Header */
 
 header{
     position:fixed;
     top:0;
+    left:0;
     width:100%;
+    background:rgba(0,32,96,.95);
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:15px 30px;
-    background:rgba(0,0,0,.35);
-    backdrop-filter:blur(12px);
     z-index:1000;
 }
 
 .logo{
-    color:gold;
-    font-size:24px;
+    display:flex;
+    align-items:center;
+    color:#FFD700;
+    font-size:22px;
     font-weight:bold;
+}
+
+.logo img{
+    margin-right:10px;
+    border-radius:50%;
 }
 
 nav a{
@@ -36,96 +50,134 @@ nav a{
     text-decoration:none;
     margin-left:18px;
     transition:.3s;
+    font-weight:500;
 }
 
 nav a:hover{
-    color:gold;
+    color:#FFD700;
 }
+
+.login-btn{
+    background:#FFD700;
+    color:#002060 !important;
+    padding:8px 16px;
+    border-radius:25px;
+}
+
+/* Hero */
 
 .hero{
     height:100vh;
+    background:linear-gradient(rgba(0,32,96,.65),rgba(0,32,96,.65));
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
+    color:white;
     padding:20px;
-    background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45));
 }
 
 .hero h1{
-    font-size:55px;
-    animation:fadeDown 1.5s ease;
+    font-size:56px;
+    margin:15px 0;
+}
+
+.hero h2{
+    color:#FFD700;
 }
 
 .hero p{
-    font-size:22px;
-    margin:20px 0;
-    animation:fadeUp 2s ease;
+    max-width:700px;
+    margin:20px auto;
 }
 
-.btn{
+.buttons{
+    margin-top:25px;
+}
+
+.btn,
+.btn2{
     display:inline-block;
-    background:gold;
-    color:#002b5c;
+    padding:14px 28px;
+    margin:10px;
+    border-radius:40px;
     text-decoration:none;
-    padding:15px 35px;
-    border-radius:50px;
     font-weight:bold;
     transition:.3s;
 }
 
-.btn:hover{
-    background:white;
-    transform:translateY(-5px);
-    box-shadow:0 0 20px gold;
+.btn{
+    background:#FFD700;
+    color:#002060;
 }
 
+.btn2{
+    border:2px solid white;
+    color:white;
+}
+
+.btn:hover,
+.btn2:hover{
+    transform:translateY(-4px);
+}
+
+/* Sections */
+
 section{
-    padding:80px 20px;
+    padding:90px 20px;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#002060;
 }
 
 .card{
     max-width:900px;
     margin:auto;
-    background:rgba(255,255,255,.12);
-    backdrop-filter:blur(10px);
-    border-radius:20px;
+    background:white;
+    border-radius:18px;
     padding:30px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.3);
-    transition:.4s;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
 }
 
-.card:hover{
-    transform:translateY(-8px);
-}
+/* Footer */
 
 footer{
-    background:#00162d;
+    background:#002060;
+    color:white;
     text-align:center;
-    padding:25px;
+    padding:30px;
 }
 
-@keyframes fadeDown{
-    from{
-        opacity:0;
-        transform:translateY(-60px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+/* Mobile */
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
 }
 
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(60px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+nav{
+    margin-top:10px;
 }
 
-@media(max-width:
+nav a{
+    display:inline-block;
+    margin:6px;
+}
+
+.hero h1{
+    font-size:36px;
+}
+
+.hero h2{
+    font-size:22px;
+}
+
+.logo{
+    font-size:18px;
+}
+
+    }
