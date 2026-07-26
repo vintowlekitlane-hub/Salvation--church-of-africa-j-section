@@ -41,3 +41,31 @@ setInterval(changeVerse, 8000);
 window.onload = function () {
     console.log("Welcome to Salvation Church of Africa");
 };
+// Sunday Service Countdown
+
+function updateCountdown() {
+    const now = new Date();
+
+    const nextSunday = new Date();
+    nextSunday.setDate(now.getDate() + ((7 - now.getDay()) % 7));
+
+    nextSunday.setHours(10, 30, 0, 0);
+
+    if (now > nextSunday) {
+        nextSunday.setDate(nextSunday.getDate() + 7);
+    }
+
+    const diff = nextSunday - now;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+    const countdown = document.getElementById("countdown");
+    if (countdown) {
+        countdown.innerHTML = `${days} Days ${hours} Hours ${minutes} Minutes`;
+    }
+}
+
+updateCountdown();
+setInterval(updateCountdown, 60000);
